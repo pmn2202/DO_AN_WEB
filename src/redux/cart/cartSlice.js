@@ -77,9 +77,9 @@ export const cartSlice = createSlice({
       localStorage.setItem("extendProduct", JSON.stringify(newCart));
     },
     doBuyNowAction: (state, action) => {
-      const { id, number } = action.payload;
+      const { id, number,title } = action.payload;
       const newCart = state.cart.map((item) => {
-        if (item.product_id === id) {
+        if (item.product_id === id && item.childTitle === title) {
           return {
             ...item,
             quantity: number,
