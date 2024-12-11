@@ -127,7 +127,7 @@ const ModalViewDetail = ({
       if (res2.status === 200) {
         dispatch(doGetCartListItemAction(res2.data.cart.products));
       }
-      dispatch(doBuyNowAction({id,number}));
+      dispatch(doBuyNowAction({id,number,title}));
       nav("/checkout");
     }
   };
